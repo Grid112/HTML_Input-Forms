@@ -16,3 +16,20 @@ email.addEventListener('input', function() {
     else emailError.textContent = "Email is Incorrect";
 });
 
+// To validate the Number using the REGEX expression
+const number = document.querySelector('#number');
+   const numberError = document.querySelector('.number-error');
+   number.addEventListener('input', function(){
+       let numberRegex = RegExp("^[0-9]{2}\\s[0-9]{10}$");
+       if(numberRegex.test(number.value)) numberError.textContent = "";
+       else numberError.textContent = "Number is Incorrect";
+   });
+
+   const password = document.querySelector('#password');
+   const passwordError = document.querySelector('.password-error');
+   password.addEventListener('input', function(){
+       let passwordRegex = RegExp("^[A-Z]{1,}[A-Z a-z]{8,}[!@#$%^*_+=]{1}[0-9]{1,}$");
+       if(passwordRegex.test(password.value)) passwordError.textContent = "";
+       else passwordError.textContent = "Password is Incorrect";
+   });
+
